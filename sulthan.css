@@ -1158,3 +1158,447 @@ section {
         display: none;
     }
 }
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* =========================
+   SCROLL ANIMATIONS (FIXED)
+========================= */
+
+/* ===== HERO SECTION ===== */
+
+/* HERO TITLE */
+.hero-title {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-title.animate-in {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+/* FLOATING TEXT LEFT */
+.floating-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.floating-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* FLOATING TEXT RIGHT */
+.floating-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.floating-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* HERO IMAGE */
+.hero-image {
+    opacity: 0;
+    transform: translateX(-50%) translateY(60px) scale(0.95);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.hero-image.animate-in {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-indicator.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== OTHER SECTIONS ===== */
+
+.about,
+.skills,
+.projects,
+.certificates,
+.gallery,
+.footer {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.about.section-visible,
+.skills.section-visible,
+.projects.section-visible,
+.certificates.section-visible,
+.gallery.section-visible,
+.footer.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .hero-title {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+
+    .hero-title.animate-in {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    .floating-left,
+    .floating-right {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    .floating-left.animate-in,
+    .floating-right.animate-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hero-image {
+        transform: translateX(-50%) translateY(30px) scale(0.95);
+    }
+
+    .hero-image img {
+        transform: translateX(-5%);
+    }
+
+    .hero-image.animate-in {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+
+    .hero-title.animate-in {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    .hero-image img {
+        transform: translateX(0);
+        height: 85%;
+    }
+}
+
+/* Tablet & Below (768px) */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-title h1 {
+        font-size: 20vw;
+    }
+    
+    .chinese-name {
+        font-size: 6vw;
+    }
+    
+    /* Section Spacing */
+    section {
+        padding: 4rem 5%;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-desc {
+        font-size: 1rem;
+    }
+    
+    /* About Section */
+    .about-grid {
+        gap: 3rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .timeline-dot {
+        left: -28px;
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-content {
+        padding: 2rem;
+    }
+    
+    .project-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gallery-item {
+        border-radius: 24px;
+    }
+    
+    /* Footer Section */
+    .footer {
+        padding: 4rem 5% 3rem;
+    }
+    
+    .footer-title {
+        font-size: 2.5rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-email {
+        font-size: 1.125rem;
+    }
+    
+    .hire-btn {
+        padding: 1.25rem 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero {
+        height: 100svh;
+    }
+    
+    .hero-title h1 {
+        font-size: 22vw;
+        letter-spacing: -0.03em;
+    }
+    
+    .chinese-name {
+        font-size: 7vw;
+    }
+    
+    .scroll-indicator {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Section Spacing */
+    section {
+        padding: 3rem 5%;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .section-desc {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* About Section */
+    .about-grid {
+        gap: 2rem;
+    }
+    
+    .about-image {
+        border-radius: 24px;
+    }
+    
+    .timeline-role {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-place {
+        font-size: 0.9rem;
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        border-radius: 24px;
+    }
+    
+    .project-content {
+        padding: 1.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.35rem;
+    }
+    
+    .project-tag {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.4rem 1rem;
+        font-size: 9px;
+    }
+    
+    .btn-github {
+        padding: 0.875rem;
+        font-size: 0.85rem;
+    }
+    
+    .btn-demo {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    /* Certificates Section */
+    .cert-card {
+        min-width: 220px;
+        max-width: 260px;
+    }
+    
+    .cert-name {
+        font-size: 1.1rem;
+    }
+    
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .gallery-item {
+        border-radius: 20px;
+    }
+    
+    .gallery-title {
+        font-size: 1.25rem;
+    }
+    
+    .gallery-overlay {
+        padding: 1.5rem;
+    }
+    
+    /* Footer Section */
+    .footer {
+        padding: 3rem 5% 2rem;
+    }
+    
+    .footer-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-links {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .footer-email {
+        font-size: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .social-btn {
+        padding: 1rem;
+    }
+    
+    .hire-btn {
+        padding: 1rem 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .copyright {
+        margin-top: 3rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra Small Mobile (375px) */
+@media (max-width: 375px) {
+    .hero-title h1 {
+        font-size: 24vw;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .footer-title {
+        font-size: 1.75rem;
+    }
+    
+    .project-title {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Landscape Mobile Fix */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 6rem 0 3rem;
+    }
+    
+    .hero-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-image {
+        position: relative;
+        transform: none;
+        height: auto;
+        max-height: 60vh;
+    }
+    
+    .hero-image img {
+        height: 100%;
+        max-height: 60vh;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+}
